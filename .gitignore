@@ -147,5 +147,8 @@ dmypy.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django
 
+# specific files and folders of out project btre
 .DS_Store
-notes
+/notes
+/media
+/static
