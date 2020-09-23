@@ -152,3 +152,4 @@ dmypy.json
 /notes
 /media
 /static
+*/migrations
