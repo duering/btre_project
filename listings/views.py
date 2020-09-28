@@ -60,6 +60,7 @@ def search(request):
 
     context = {
         'listings': queryset_list,
+        'values': request.GET,
         'price_choices': price_choices,
         'bedroom_choices': bedroom_choices,
         'state_choices': state_choices
