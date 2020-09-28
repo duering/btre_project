@@ -22,10 +22,10 @@
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="{% url 'index' %}">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="listings.html">Listings</a>
+          <a href="{% url 'listings' %}">Listings</a>
         </li>
         <li class="breadcrumb-item active">{{listing.address}}</li>
       </ol>
@@ -43,37 +43,50 @@
         <img src="{{ listing.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
         <!-- Thumbnails -->
         <div class="row mb-5 thumbs">
+          {% if listing.photo_1 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-1.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-1.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_1.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_1.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
+          {% if listing.photo_2 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-2.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-2.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_2.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_2.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
+          {% if listing.photo_3 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-3.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-3.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_3.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_3.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
+          {% if listing.photo_4 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-4.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-4.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_4.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_4.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
+          {% if listing.photo_5 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-5.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-5.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_5.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_5.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
+          {% if listing.photo_6 %}
           <div class="col-md-2">
-            <a href="assets/img/homes/home-inside-6.jpg" data-lightbox="home-images">
-              <img src="assets/img/homes/home-inside-6.jpg" alt="" class="img-fluid">
+            <a href="{{ listing.photo_6.url }}" data-lightbox="home-images">
+              <img src="{{ listing.photo_6.url }}" alt="" class="img-fluid">
             </a>
           </div>
+          {% endif %}
         </div>
+
         <!-- Fields -->
         <div class="row mb-5 fields">
           <div class="col-md-6">
@@ -126,15 +139,13 @@
         <!-- Description -->
         <div class="row mb-5">
           <div class="col-md-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia recusandae esse reiciendis officia omnis non rerum dicta
-            cupiditate nostrum molestias deserunt aut minus inventore animi atque, consequuntur ad fugit. Possimus culpa
-            blanditiis repellendus ipsa similique ullam, natus error dolor harum.
+            {{ listing.description }}
           </div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card mb-3">
-          <img class="card-img-top" src="{{ listing.realtor.photo_main.url }}" alt="Seller of the month">
+          <img class="card-img-top" src="{{ listing.realtor.photo_main.url }}" alt="">
           <div class="card-body">
             <h5 class="card-title">Property Realtor</h5>
             <h6 class="text-secondary">{{ listing.realtor }}</h6>
