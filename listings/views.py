@@ -22,14 +22,6 @@ def listing(request, listing_id):
     })
 
 def search(request):
-    # 'parameters': {
-    #         'keywords': request.GET.get('keywords'),
-    #         'city': request.GET.get('city'),
-    #         'state': request.GET.get('state'),
-    #         'price': request.GET.get('price'),
-    #         'bedrooms': request.GET.get('bedrooms'),
-    #     },
-
     queryset_list = Listing.objects.order_by('-list_date').filter(is_published=True)
     
     # Keywords

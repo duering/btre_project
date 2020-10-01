@@ -12,7 +12,6 @@ def index(request):
         'price_choices': price_choices,
         'bedroom_choices': bedroom_choices,
         'state_choices': state_choices,
-        'text': {'abc': 124, 'cde': 456}
     }
     return render(request, 'pages/index.html', context)
 
